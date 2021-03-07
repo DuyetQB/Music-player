@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta property = "og:image" content="https://images.unsplash.com/photo-1615081423479-1e819ec2853e?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
+</head>
+<body>
+    <div class="container">
+       <div class="image-left">
+           <img src="https://images.unsplash.com/photo-1611095965923-b8b19341cc29?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+       </div>
+       <div class="infor-right">
+           <div class="music-song">
+               <h1 class="music-song-title">Hello world</h1>
+           </div>
+           <div class="music-singer">
+               <h3 class="music-singer-name">Dinh Si Duyet</h3>
+           </div>
+           <div class="wrap-btn">
+            <i class="fa fa-arrow-circle-left"onClick="prev()"></i>
+            <div id="btn-toggle" onclick="playbtn()" >
+            <i class="fa fa-play" ></i>
+            </div>
+            <i class="fa fa-arrow-circle-right" onClick="next()"></i>
+           </div>
+       
+       <div class="music-track">
+           <input type="range" value="0" class="track-input" onchange="track_Value(this)">
+           <!-- <div class="processbar"></div> -->
+          
+       </div>
+       <div class="music-loop">
+        <i class="fa fa-undo" onclick="loop_Music()" style="cursor: pointer;margin-top: 70px;"></i>
+       </div>
+    </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
