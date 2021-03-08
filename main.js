@@ -10,8 +10,7 @@
  let fillbar = document.querySelector(".processbar");
 
  let button_play = document.querySelector(".btn-toggle i.fa-play");
- console.log(songs,singer,track,button_toggel);
-
+ 
  
 
 let index = 0;
@@ -41,7 +40,7 @@ song_src:'https://file-am-thanh.vercel.app/Give%20Me%20Your%20Love.mp3'
 },
 {
     song_name: 'Without you',
-song_singer:'Avicii',
+song_singer:'DEAM',
 song_image:'https://images.unsplash.com/photo-1614486109039-a8f3dc411201?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
 song_src:'https://file-am-thanh.vercel.app/Without%20You2.mp3'
 },
@@ -59,7 +58,7 @@ song_src:'https://file-am-thanh.vercel.app/Rendezvous.mp3'
 }
 ];
 
-console.log(list_Songs[index].song_name);
+
 let audio = document.createElement("audio");
 container.appendChild(audio);
 audio = new Audio();
@@ -93,27 +92,29 @@ playbtn = ()=>{
   
 
  next= ()=>{
-    
+   
+
 index++;
-
-
-change();
-playbtn();
-if(index >list_Songs.length-1){
+if(index >list_Songs.length){
     index = 0;
 }
 
+change();
+playbtn();
+
+
 }
  prev = ()=>{
-  
+ 
+
     index--;
     
-  
+    if(index < 0){
+        index = list_Songs.length;
+    }
     change();
     playbtn();
-    if(index < 0){
-        index = list_Songs.length-1;
-    }
+    
 }
   
 
@@ -122,25 +123,25 @@ function track_Value(){
     audio.currentTime = track.value ;
    
     track.value =audio.currentTime 
-//   audio.currentTime =  track.value;
+
   
     
 }
 
-audio.addEventListener("timeupdate", function(){
+// audio.addEventListener("timeupdate", function(){
    
-    let position = audio.currentTime / audio.duration;
-    fillbar.style.width = position * 100 +"%";
+//     let position = audio.currentTime / audio.duration;
+//     fillbar.style.width = position * 100 +"%";
      
-    if( fillbar.style.width =="100%"){
+//     if( fillbar.style.width =="100%"){
     
- }
+//  }
    
 
 
 
-}
-);
+
+
 
 function loop_Music(){
     audio.loop = true;
@@ -161,6 +162,3 @@ function loop_Music(){
 
 
 
-console.log(list_Songs[index].song_image);
-
-console.log(list_Songs[index].song_src);
