@@ -4,12 +4,13 @@
 
  let  songs = document.querySelector(".music-song-title");
  let singer = document.querySelector(".music-singer-name");
- let track = document.querySelector(".music-track input");
+ 
  let container = document.querySelector(".container");
  let image = document.querySelector(".image-left img");
  let fillbar = document.querySelector(".processbar");
 
  let button_play = document.querySelector(".btn-toggle i.fa-play");
+ let length = document.querySelector("#length");
  
  
 
@@ -23,7 +24,7 @@ let list_Songs = [
     {
         song_name: 'Chúng ta của hiện tại ',
     song_singer:'Sơn Tùng MTP',
-    song_image:'https://images.unsplash.com/photo-1614443822810-494e4014f6fc?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+    song_image:'https://1.bp.blogspot.com/-wpE8kAroZl8/X-p8dYlTABI/AAAAAAAAJ8k/QWePuk9isy0PuPMxmweqCnajPlhEI8gagCNcBGAsYHQ/s787/132391052_223041176082901_5587329705790319564_n.png',
     song_src:'https://file-am-thanh.vercel.app/Chung%20Ta%20Cua%20Hien%20Tai%20-%20Son%20Tung%20M-TP.mp3'
 },
 {
@@ -52,7 +53,7 @@ song_src:'https://file-am-thanh.vercel.app/Perfect%20(Ed%20Sheeran%20Cover).mp3'
 },
 {
     song_name: 'Rendervous',
-song_singer:' MTP',
+song_singer:' DEAM',
 song_image:'https://images.unsplash.com/photo-1614442042855-e17d53875286?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
 song_src:'https://file-am-thanh.vercel.app/Rendezvous.mp3'
 }
@@ -118,42 +119,40 @@ playbtn();
 }
   
 
-function track_Value(){
+// function track_Value(e){
+//     console.log(fillbar.getClientRects()[0])
+ 
+//         const audio = document.getElementById(currentAudio);
+//         //get current position and minus progress bar's x position to get current position in progress bar
+//         const pos =
+//         (e.pageX - progressDiv.getClientRects()[0].x) /
+//         progressDiv.getClientRects()[0].width;
+//         audio.currentTime = pos * audio.duration;
+//         changeBar();
+      
+// }
 
-    audio.currentTime = track.value ;
+
+audio.addEventListener("timeupdate", function(){
    
-    track.value =audio.currentTime 
-
-  
-    
-}
-
-// audio.addEventListener("timeupdate", function(){
-   
-//     let position = audio.currentTime / audio.duration;
-//     fillbar.style.width = position * 100 +"%";
+    let position = audio.currentTime / audio.duration;
+   length.style.width = position * 100 +"%";
      
-//     if( fillbar.style.width =="100%"){
-    
-//  }
+    if( fillbar.style.width =="100%"){
+    next();
+}
    
 
 
 
 
-
+});
 
 function loop_Music(){
     audio.loop = true;
 }
 
-// audio.addEventListener("timeupdate",()=>{
-//     console.log(audio.currentTime);
-   
-  
- 
-     
-// })
+
 
 
 
