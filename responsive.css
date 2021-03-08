@@ -3,7 +3,7 @@
 flex-direction: column;
 overflow: hidden;
 height:710px;
-padding: 10px;
+padding: 0px;
 
     }
     .container .image-left{
@@ -22,7 +22,7 @@ padding: 10px;
         justify-content: space-between;
     }
     .container .infor-right .wrap-btn #btn-toggle{
-        margin-right: 33px;
+        margin-right: 37px;
     }
     .container .infor-right .wrap-btn i:nth-child(1){
 margin-left: 30px;
