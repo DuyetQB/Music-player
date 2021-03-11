@@ -125,7 +125,7 @@ audio.addEventListener("timeupdate", function(){
    length.style.width = position * 100 +"%";
  
     if( length.style.width ==="100%"){
-        prev();
+        next();
 }
    
 
