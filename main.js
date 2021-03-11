@@ -134,7 +134,7 @@ function loop_Music(){
     }
 }
 function add(){
-    audio.currentTime+=25;
+    audio.currentTime+=5;
 }
 function subtract(){
     audio.currentTime -=5;
