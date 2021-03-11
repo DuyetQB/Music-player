@@ -25,21 +25,30 @@
                <h3 class="music-singer-name">Dinh Si Duyet</h3>
            </div>
            <div class="wrap-btn">
-            <i class="fa fa-chevron-left"onClick="prev()"></i>
+            <i class="fa fa-chevron-left"onclick="prev()"></i>
             <div id="btn-toggle" onclick="playbtn()" >
             <i class="fa fa-play" ></i>
             </div>
-            <i class="fa fa-chevron-right" onClick="next()"></i>
+            <i class="fa fa-chevron-right" onclick="next()"></i>
            </div>
        
        <div class="music-track">
            
-           <div class="processbar"  onclick="track_Value(this)">
+           <div class="processbar">
           <div id="length"></div>
+       
+  
           </div>
+         
+       </div>
+       <div class="music-number"> 
+           <button class="number-subtract number"onclick="subtract()" title="this button to change audio currentTime subtract X5">-</button>
+           <button class="number-add number" onclick="add()"title="this button to change audio current Time  X5">+</button>
        </div>
        <div class="music-loop">
-        <i class="fa fa-undo" onclick="loop_Music()" style="cursor: pointer;margin-top: 50px;"></i>
+        <i class="fa fa-undo" onclick="loop_Music()" style="cursor: pointer;margin-top: 30px;" title="this icon to loop song"></i>
+
+        <b class="nu"></b>
        </div>
     </div>
     </div>

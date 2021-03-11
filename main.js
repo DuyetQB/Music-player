@@ -8,7 +8,9 @@
  let container = document.querySelector(".container");
  let image = document.querySelector(".image-left img");
  let fillbar = document.querySelector(".processbar");
+ let inputValue = document.querySelector("#myRange");
 
+ 
  let button_play = document.querySelector(".btn-toggle i.fa-play");
  let length = document.querySelector("#length");
  
@@ -62,7 +64,7 @@ song_src:'https://file-am-thanh.vercel.app/Rendezvous.mp3'
 
 let audio = document.createElement("audio");
 container.appendChild(audio);
-audio = new Audio();
+
 audio.src= list_Songs[index];
 
 function change(){
@@ -92,54 +94,38 @@ playbtn = ()=>{
 };
   
 
- next= ()=>{
-   
+ function next(){
+    if(index >list_Songs.length-1){
+        index = 0;
+       
+    }
 
 index++;
-if(index >list_Songs.length){
-    index = 0;
-}
 
 change();
 playbtn();
 
 
 }
- prev = ()=>{
- 
-
-    index--;
-    
+function prev(){
     if(index < 0){
         index = list_Songs.length;
     }
+
+    index--;
     change();
+   
     playbtn();
-    
+   
 }
   
-
-// function track_Value(e){
-//     console.log(fillbar.getClientRects()[0])
- 
-//         const audio = document.getElementById(currentAudio);
-//         //get current position and minus progress bar's x position to get current position in progress bar
-//         const pos =
-//         (e.pageX - progressDiv.getClientRects()[0].x) /
-//         progressDiv.getClientRects()[0].width;
-//         audio.currentTime = pos * audio.duration;
-//         changeBar();
-      
-// }
-
-
 audio.addEventListener("timeupdate", function(){
    
     let position = audio.currentTime / audio.duration;
    length.style.width = position * 100 +"%";
-     
-    if( fillbar.style.width =="100%"){
-    next();
+ 
+    if( length.style.width ==="100%"){
+        prev();
 }
    
 
@@ -150,12 +136,17 @@ audio.addEventListener("timeupdate", function(){
 
 function loop_Music(){
     audio.loop = true;
+   document.querySelector(".nu").innerHTML = 1;
 }
 
 
 
-
-
+function add(){
+    audio.currentTime+=25;
+}
+function subtract(){
+    audio.currentTime -=5;
+}
 
 
 
