@@ -8,19 +8,9 @@
  let container = document.querySelector(".container");
  let image = document.querySelector(".image-left img");
  let fillbar = document.querySelector(".processbar");
- let inputValue = document.querySelector("#myRange");
-
- 
  let button_play = document.querySelector(".btn-toggle i.fa-play");
  let length = document.querySelector("#length");
- 
- 
-
 let index = 0;
-
-
- 
-
 
 let list_Songs = [
     {
@@ -66,17 +56,18 @@ let audio = document.createElement("audio");
 container.appendChild(audio);
 
 audio.src= list_Songs[index];
+change();
 
 function change(){
-
 image.src= `${list_Songs[index].song_image}`
 audio.src = `${list_Songs[index].song_src}`;
 singer.innerHTML = `${list_Songs[index].song_singer}`;
 songs.innerHTML = `${list_Songs[index].song_name}`;
-}
-change();
 
-playbtn = ()=>{
+
+}
+
+function playbtn(){
    
    
 
@@ -95,27 +86,26 @@ playbtn = ()=>{
   
 
  function next(){
-    if(index >list_Songs.length-1){
-        index = 0;
-       
-    }
 
+
+
+if(index >5){
+    index = 0;
+   
+   
+}
 index++;
-
 change();
 playbtn();
-
 
 }
 function prev(){
     if(index < 0){
-        index = list_Songs.length;
+        index = 5;
     }
-
-    index--;
     change();
    
-    playbtn();
+    index--;
    
 }
   
@@ -123,32 +113,34 @@ audio.addEventListener("timeupdate", function(){
    
     let position = audio.currentTime / audio.duration;
    length.style.width = position * 100 +"%";
- 
-    if( length.style.width ==="100%"){
-        next();
-}
+  
    
-
-
-
-
-});
+});;
 
 function loop_Music(){
-    audio.loop = true;
-   document.querySelector(".nu").innerHTML = 1;
+    let current = "click1";
+
+    if(current==="click1"){
+        audio.loop = true;
+        document.querySelector(".nu").textContent = "1";
+        current = "click2";
+      
+    }
+     else if(current=="click2"){
+        audio.loop = false;
+        document.querySelector(".nu").textContent=" ";
+        current = "click1";
+      
+    }
 }
-
-
-
 function add(){
     audio.currentTime+=25;
 }
 function subtract(){
     audio.currentTime -=5;
-}
+};
 
-
-
-
-
+audio.addEventListener('ended',function(){
+    //play next song
+    next();
+  });

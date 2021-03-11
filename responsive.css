@@ -32,4 +32,10 @@ font-size: 50px;
         margin-right: 30px;
         font-size: 50px;
     }
+    .music-number .number{
+        margin-left: 10px;
+    }
+    .music-number .number.number-add{
+        margin-right: 10px;
+    }
 }
