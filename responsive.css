@@ -33,9 +33,9 @@ font-size: 50px;
         font-size: 50px;
     }
     .music-number .number{
-        margin-left: 10px;
+        margin-left: 20px;
     }
     .music-number .number.number-add{
-        margin-right: 10px;
+        margin-right: 0px;
     }
 }
