@@ -1,5 +1,6 @@
 
-
+let loopMusic=  document.querySelector("#loopMusic");
+let loopMusic_number=  document.querySelector(".nu");
  let button_toggel = document.querySelector("#btn-toggle");
 
  let  songs = document.querySelector(".music-song-title");
@@ -11,6 +12,7 @@
  let button_play = document.querySelector(".btn-toggle i.fa-play");
  let length = document.querySelector("#length");
 let index = 0;
+let current = "click1";
 
 let list_Songs = [
     {
@@ -123,18 +125,17 @@ audio.addEventListener("timeupdate", function(){
    
 });;
 
-function loop_Music(){
-    let current = "click1";
-
+loopMusic.onclick = ()=>{
+    
     if(current==="click1"){
         audio.loop = true;
-        document.querySelector(".nu").textContent = "1";
+        loopMusic_number.textContent = "1";
         current = "click2";
       
     }
      else if(current=="click2"){
         audio.loop = false;
-        document.querySelector(".nu").textContent=" ";
+        loopMusic_number.textContent=" ";
         current = "click1";
       
     }
@@ -150,3 +151,5 @@ audio.addEventListener('ended',function(){
     //play next song
     next();
   });
+
+  console.timeLog(loopMusic)
