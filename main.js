@@ -89,23 +89,29 @@ function playbtn(){
 
 
 
-if(index >5){
+if(index > list_Songs.length-1){
     index = 0;
-   
+   console.log(index)
    
 }
+else{
 index++;
+}
+
 change();
 playbtn();
 
 }
 function prev(){
     if(index < 0){
-        index = 5;
+        index = list_Songs.length-1;
+    }
+    else{
+        index--;
     }
     change();
    
-    index--;
+    
    
 }
   
