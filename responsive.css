@@ -18,15 +18,16 @@ padding: 0px;
     .container .infor-right .music-song .music-song-title{
         padding-top: 10px;
     }
-    .container .infor-right .wrap-btn{
-        justify-content: space-between;
-    }
-    .container .infor-right .wrap-btn #btn-toggle{
-        margin-right: 37px;
+  
+   
+    .container .infor-right .wrap-btn i{
+
+        font-size: .5rem;
     }
     .container .infor-right .wrap-btn i:nth-child(1){
-margin-left: 30px;
-font-size: 50px;
+margin-left: 0px;
+
+font-size:2rem;
     }
     .container .infor-right .wrap-btn i:nth-child(3){
         margin-right: 30px;
