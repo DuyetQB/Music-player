@@ -109,6 +109,7 @@ playbtn();
 function prev(){
     if(index < 0){
         index = list_Songs.length-1;
+        console.log( list_Songs.length-1)
     }
     else{
         index--;
