@@ -50,6 +50,38 @@ song_src:'https://file-am-thanh.vercel.app/Perfect%20(Ed%20Sheeran%20Cover).mp3'
 song_singer:' DEAM',
 song_image:'https://images.unsplash.com/photo-1614442042855-e17d53875286?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
 song_src:'https://file-am-thanh.vercel.app/Rendezvous.mp3'
+},
+
+{
+    song_name: 'I want you to know',
+song_singer:' Hega, Pegato',
+song_image:'https://kynguyenlamdep.com/wp-content/uploads/2020/01/hinh-anh-dep-hoa-bo-cong-anh-700x466.jpg',
+song_src:'https://aredir.nixcdn.com/NhacCuaTui994/IWantYouToKnowRemix-HellaPegato-6204760.mp3?st=Ui48H-GGqMzqJ2yhdKOmvg&e=1599575645'
+},
+
+{
+    song_name: 'Fractures',
+song_singer:' IIIenium',
+song_image:'https://images.unsplash.com/photo-1605885898627-1121a2a1ff25?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+song_src:'https://file-am-thanh.vercel.app/Fractures%20-%20Illenium_%20Nevve.mp3'
+},
+{
+    song_name: 'Mayday',
+song_singer:' TheFatRat',
+song_image:'https://images.unsplash.com/photo-1605722997309-8f308fa11a69?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60',
+song_src:'https://file-am-thanh.vercel.app/Mayday%20-%20TheFatRat_%20Laura%20Brehm.mp3'
+},
+{
+    song_name: 'Solitude',
+song_singer:' TheFatRat',
+song_image:'https://images.unsplash.com/photo-1605852967399-8e500bac048e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60',
+song_src:'https://file-am-thanh.vercel.app/Solitude%20-%20TheFatRat_%20Slaydit.mp3'
+},
+{
+    song_name: 'Chosen',
+song_singer:' TheFatRat',
+song_image:'https://images.unsplash.com/photo-1601758124360-86f5a0432c42?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60',
+song_src:'https://file-am-thanh.vercel.app/Chosen%20-%20TheFatRat_%20Laura%20Brehm_%20Anna%20Yv.mp3'
 }
 ];
 
@@ -61,6 +93,7 @@ audio.src= list_Songs[index];
 change();
 
 function change(){
+  
     clearInterval(timer);
     reset_slider();
 image.src= `${list_Songs[index].song_image}`
@@ -68,7 +101,7 @@ audio.src = `${list_Songs[index].song_src}`;
 singer.innerHTML = `${list_Songs[index].song_singer}`;
 songs.innerHTML = `${list_Songs[index].song_name}`;
 audio.load();
-timer = setInterval( range_slider ,1000)
+timer = setInterval( range_slider ,1000);
 }
 
 function playbtn(){
@@ -116,7 +149,6 @@ function prev(){
     }
     change();
    
-    
    
 }
 function reset_slider(){
@@ -158,12 +190,7 @@ loopMusic.onclick = ()=>{
       
     }
 }
-// function add(){
-//     audio.currentTime+=5;
-// }
-// function subtract(){
-//     audio.currentTime -=5;
-// };
+
 
 audio.addEventListener('ended',function(){
     //play next song
