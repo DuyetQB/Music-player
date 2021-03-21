@@ -3,7 +3,7 @@
 }
 body{
     color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 .container{
@@ -13,7 +13,7 @@ body{
     width:100%;
     overflow: hidden;
     height:560px;
-  box-shadow: 0 10px 4px rgb(212, 210, 210);
+  box-shadow: 0 6px 4px rgb(240, 239, 239);
   
     position: relative;
 }
@@ -31,11 +31,11 @@ body{
     text-align: center;
     justify-content: center;
     height:100%;
-    background: linear-gradient(to right, #50C9C3,#96DEDA)
+    background: linear-gradient(to right,#F9C0CD,#F96195,#be8090)
 }
 
 .container .infor-right .music-song .music-song-title{
-   padding-top: 11rem;
+   padding-top: 10rem;
    padding-bottom: 1.4rem;
 }
 
@@ -73,32 +73,44 @@ margin-top: 1.4rem;
 .container .music-loop svg{
     cursor: pointer;
 }
-.container .infor-right .music-track {
-    position: relative;
-}
-.container .infor-right .music-track .track-input{
-    z-index: 4;
-    position: absolute;
-    left:0;
-   
-   
-  
-}
-.container .infor-right .music-track .processbar{
+
+
+.container .infor-right .music-track #run-music{
+    -webkit-apperance:none;
+    outline: none;
+    -moz-apperance:none;
     width:100%;
-  border: 1px solid rgb(30, 214, 238);
-height:6px;
-position: relative;
-
-z-index: 1;
-top:43px;
-
 }
-.container .infor-right .music-track .processbar #length{
-    width:0%;
-height:6px;
-background: rgba(60, 5, 212, 0.411);
-position: absolute;
+ #run-music::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	background: #0FD284;
+	border-radius: 50%;
+	cursor: pointer;
+}
+ #run-music::-moz-slider-thumb{
+	-moz-appearance: none;
+	height: 20px;
+	width: 20px;
+	background: #FF8A65;
+	border-radius: 50%;
+	cursor: pointer;
+}
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 50%;
+	outline: none;
+	height: 2px;
+	margin: 0 15px;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	background: #FF8A65;
+	border-radius: 50%;
+	cursor: pointer;
 }
 .music-number{
 justify-content: space-between;

@@ -34,17 +34,16 @@
        
        <div class="music-track">
            
-           <div class="processbar">
-          <div id="length"></div>
-       
+          
+          <!-- <div id="length"></div> -->
+       <input type="range" min="0" max="100" value="0"  id="run-music" class="range-slide" onchange = "rangeInput()" >
   
-          </div>
          
        </div>
-       <div class="music-number"> 
+       <!-- <div class="music-number"> 
            <button class="number-subtract number"onclick="subtract()" title="this button to change audio currentTime subtract X5">-</button>
            <button class="number-add number" onclick="add()"title="this button to change audio current Time  X5">+</button>
-       </div>
+       </div> -->
        <div class="music-loop">
         <i id="loopMusic" class="fa fa-undo" style="cursor: pointer;margin-top: 30px;" title="this icon to loop song"></i>
 

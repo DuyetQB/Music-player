@@ -10,10 +10,10 @@ let loopMusic_number=  document.querySelector(".nu");
  let image = document.querySelector(".image-left img");
  let fillbar = document.querySelector(".processbar");
  let button_play = document.querySelector(".btn-toggle i.fa-play");
- let length = document.querySelector("#length");
+ let range = document.querySelector(".range-slide");
 let index = 0;
 let current = "click1";
-
+let timer;
 let list_Songs = [
     {
         song_name: 'Chúng ta của hiện tại ',
@@ -61,12 +61,14 @@ audio.src= list_Songs[index];
 change();
 
 function change(){
+    clearInterval(timer);
+    reset_slider();
 image.src= `${list_Songs[index].song_image}`
 audio.src = `${list_Songs[index].song_src}`;
 singer.innerHTML = `${list_Songs[index].song_singer}`;
 songs.innerHTML = `${list_Songs[index].song_name}`;
-
-
+audio.load();
+timer = setInterval( range_slider ,1000)
 }
 
 function playbtn(){
@@ -116,14 +118,29 @@ function prev(){
     
    
 }
-  
-audio.addEventListener("timeupdate", function(){
+function reset_slider(){
+    range.value = 0;
+}
+  function rangeInput (){
+    slider_position = audio.duration * (range.value / 100);
+	audio.currentTime = slider_position;
    
-    let position = audio.currentTime / audio.duration;
-   length.style.width = position * 100 +"%";
+  }
+  function range_slider(){
+    let position = 0;
+        
+    // update slider position
+    if(!isNaN(audio.duration)){
+       position = audio.currentTime * (100 / audio.duration);
+       range.value =  position;
+      }
+    };
+   
+//     let position = audio.currentTime / audio.duration;
+//    length.style.width = position * 100 +"%";
   
    
-});;
+// });;
 
 loopMusic.onclick = ()=>{
     
@@ -140,16 +157,16 @@ loopMusic.onclick = ()=>{
       
     }
 }
-function add(){
-    audio.currentTime+=5;
-}
-function subtract(){
-    audio.currentTime -=5;
-};
+// function add(){
+//     audio.currentTime+=5;
+// }
+// function subtract(){
+//     audio.currentTime -=5;
+// };
 
 audio.addEventListener('ended',function(){
     //play next song
     next();
   });
 
-  console.timeLog(loopMusic)
+  
